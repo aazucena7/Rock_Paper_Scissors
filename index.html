@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+
+<script>
+
+function getComputerChoice(){
+
+            let choice = ['rock', 'paper', 'scissors'];
+
+            let word = Math.floor(Math.random()*choice.length);
+
+            return choice[word];
+    
+}
+
+function playGame(playerSelection, computerSelection){
+            let a = 'You win. Rock beats paper.';
+            let b = 'You lose. Scissors beats rock.';
+            let c = 'You win. Paper beats rock.';
+            let d = 'You lose. Scissors beats paper.';
+            let e = 'You lose. Rock beats scissors.';
+            let f = 'You win. Scissors beats paper.';
+            let g = 'Game Over. A tie!';
+
+
+            if (playerSelection === 'rock'  && computerSelection === 'paper') {
+                return a;
+            } 
+              else if (playerSelection === 'rock'  && computerSelection === 'scissors') {
+                return b;
+            }
+              else if (playerSelection === 'paper'  && computerSelection === 'rock') {
+                return c;
+            }
+              else if (playerSelection === 'paper'  && computerSelection === 'scissors') {
+                return d; 
+            }
+              else if (playerSelection === 'scissors'  && computerSelection === 'rock') {
+                return e;
+            }
+              else if (playerSelection === 'scissors'  && computerSelection === 'paper') {
+                return f;
+            }
+              else {
+                return g;
+            }  
+              console.log(computerSelection)
+}
+
+
+console.log(playGame('rock', getComputerChoice()))
+</script>
+
+
+</html>
