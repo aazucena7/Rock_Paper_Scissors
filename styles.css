@@ -31,14 +31,28 @@ button {
 button:hover {
     border: .5rem solid yellow;
 }
-
-p {
-    color: white;
+.flex-left {
     display: flex;
-    justify-content: center;
+    align-items: center;
     
-    border: .5rem solid white;
+    width: 18rem;
+    justify-content: space-between;
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+   
 }
+
+.flex-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 18rem;
+    padding-top: 3rem;
+
+}
+
+
 .score-section{
     display: flex;
     justify-content: center;
@@ -48,11 +62,12 @@ p {
 
 #scoreboard {
     display: flex;
-    text-align: center;
     flex-direction: column;
-     
+    align-items: center;
     border: .5rem solid white;
     color: white;
     height: 30rem;
     width: 20rem;
+    font-size: 3rem;
+    border-radius: 10px;
 }
