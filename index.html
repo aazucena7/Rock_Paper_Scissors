@@ -77,24 +77,23 @@ function game(){
   let losses = 0;
   let tie = 0;
   
-  //for (let i = 0; i < 5; i++) {
-    //let userchoice = prompt('Rock, Paper, or Scissors?'); //prompt window for user to input choice
 
 
-    let result = playRound(UserChoice.toLowerCase(), getComputerChoice());
+
+  let result = playRound(UserChoice.toLowerCase(), getComputerChoice());
          
-    alert(result);
+  alert(result);
 
-    if (result.search('win') === -1  && result.search('tie') === -1) {
-      losses++;
-    }  
-    else if (result.search('lose') === -1 && result.search('tie') === -1) {
-        wins++;
-    }
-    else if (result.search('tie') > 1) {
-        tie++;
-    }
-  //}
+  if (result.search('win') === -1  && result.search('tie') === -1) {
+    losses++;
+  }  
+  else if (result.search('lose') === -1 && result.search('tie') === -1) {
+    wins++;
+  }
+  else if (result.search('tie') > 1) {
+    tie++;
+  }
+  
 
   if (wins > losses && wins > tie) {
     alert('You win!');
