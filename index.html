@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+  <h1>MAKE YOUR CHOICE</h1>  
+  
+  <div class = "buttons">
+    <div class="rock">ROCK</div>
+    <div class="paper">PAPER</div>
+    <div class="scissors">SCISSORS</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 
@@ -15,11 +33,11 @@
 
 function getComputerChoice(){
 
-            let choice = ['rock', 'paper', 'scissors'];
+let choice = ['rock', 'paper', 'scissors'];
 
-            let word = Math.floor(Math.random()*choice.length);
+let word = Math.floor(Math.random()*choice.length); // picks random choice for computer
 
-            return choice[word];
+  return choice[word];
     
 }
 
@@ -61,8 +79,8 @@ function game(){
   let losses = 0;
   let tie = 0;
   
-  for (let i = 0; i < 5; i++) {
-    let userchoice = prompt('Rock, Paper, or Scissors?');
+  //for (let i = 0; i < 5; i++) {
+    //let userchoice = prompt('Rock, Paper, or Scissors?'); //prompt window for user to input choice
 
 
     let result = playRound(userchoice.toLowerCase(), getComputerChoice());
@@ -78,7 +96,7 @@ function game(){
     else if (result.search('tie') > 1) {
         tie++;
     }
-  }
+  //}
 
   if (wins > losses && wins > tie) {
     alert('You win!');
