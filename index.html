@@ -10,33 +10,31 @@
 <body>
   <h1>MAKE YOUR CHOICE</h1>  
   
-  <div class = "buttons">
-    <div class="rock">ROCK</div>
-    <div class="paper">PAPER</div>
-    <div class="scissors">SCISSORS</div>
+  <div id = "container">
+    <button id="rock">ROCK</button>
+    <button id="paper">PAPER</button>
+    <button id="scissors">SCISSORS</button>
   </div>
-
-
-
-
-
-
-
-
-
 
 
 </body>
 
 
 <script>
+const buttons = document.querySelectorAll('button');
+let UserChoice = "";
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    UserChoice = button.id;
+    game();
+  });
+});
+
 
 function getComputerChoice(){
-
 let choice = ['rock', 'paper', 'scissors'];
-
 let word = Math.floor(Math.random()*choice.length); // picks random choice for computer
-
   return choice[word];
     
 }
@@ -83,7 +81,7 @@ function game(){
     //let userchoice = prompt('Rock, Paper, or Scissors?'); //prompt window for user to input choice
 
 
-    let result = playRound(userchoice.toLowerCase(), getComputerChoice());
+    let result = playRound(UserChoice.toLowerCase(), getComputerChoice());
          
     alert(result);
 
@@ -113,7 +111,7 @@ function game(){
 
 }
 
-game(); 
+//game(); 
 
  
 

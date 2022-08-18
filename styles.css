@@ -9,12 +9,14 @@ h1 {
     text-align: center;
 }
  
-.buttons {
+#container {
     display: flex;
 }
 
-.buttons div {
+button {
     color: white;
+    background-color: black;
+    border-radius: 10px;    
     display: flex;
     text-align: center;
     align-items: center;
@@ -23,6 +25,10 @@ h1 {
     font-size: 3rem;
     border: .5rem solid white;
     margin: 1rem;
-    padding: 2rem 1rem;
-
+    padding: 2rem 1rem; 
 }
+
+button:hover {
+    border: .5rem solid yellow;
+}
+
