@@ -32,3 +32,27 @@ button:hover {
     border: .5rem solid yellow;
 }
 
+p {
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+    border: .5rem solid white;
+}
+.score-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    
+}
+
+#scoreboard {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+     
+    border: .5rem solid white;
+    color: white;
+    height: 30rem;
+    width: 20rem;
+}

@@ -16,23 +16,47 @@
     <button id="scissors">SCISSORS</button>
   </div>
 
-
+  <div class = "score-section">
+    <div id = "scoreboard">SCORE
+      
+      <p>you</p>
+      <p id = "score1">0</p>
+      <p>computer</p>
+      <p id = "score2">0</p>    
+    </div>
+  </div>
 </body>
 
 
 <script>
+let wins = 0;
+let losses = 0;
+let ties = 0;
+
 const buttons = document.querySelectorAll('button');
 let UserChoice = "";
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     UserChoice = button.id;
-    game();
+    //playRound(UserChoice, getComputerChoice());
+    let result = playRound(UserChoice, getComputerChoice());
+    alert(result);    
+      if (result.search('win') === -1  && result.search('tie') === -1) {
+        losses++;
+      }  
+      else if (result.search('lose') === -1 && result.search('tie') === -1) {
+        wins++;
+      }
+      else if (result.search('tie') > 1) {
+        ties++;
+      }
+      console.log(wins);
   });
 });
 
 
-function getComputerChoice(){
+function getComputerChoice() {
 let choice = ['rock', 'paper', 'scissors'];
 let word = Math.floor(Math.random()*choice.length); // picks random choice for computer
   return choice[word];
@@ -68,54 +92,32 @@ function playRound(playerSelection, computerSelection){
   }
   else {
     return g;
-  }  
-}
-
-function game(){
-  
-  let wins = 0;
-  let losses = 0;
-  let tie = 0;
-  
-
-
-
-  let result = playRound(UserChoice.toLowerCase(), getComputerChoice());
-         
-  alert(result);
-
-  if (result.search('win') === -1  && result.search('tie') === -1) {
-    losses++;
-  }  
-  else if (result.search('lose') === -1 && result.search('tie') === -1) {
-    wins++;
-  }
-  else if (result.search('tie') > 1) {
-    tie++;
-  }
-  
-
-  if (wins > losses && wins > tie) {
-    alert('You win!');
-  }
-  else if (losses > wins && losses > tie) {
-    alert('You lose! Better luck next time.');
-  }
-  else if (wins === losses) {
-    alert('A tie. No one wins!');
+    
   }
    
-
-  alert('Wins: ' + wins + ' Losses: ' + losses + ' Ties: ' + tie);
-
 }
 
-//game(); 
+  //if (wins > losses && wins > tie) {
+    //alert('You win!');
+  //}
+  //else if (losses > wins && losses > tie) {
+    //alert('You lose! Better luck next time.');
+  //}
+  //else if (wins === losses) {
+    //alert('A tie. No one wins!');
+  //}
+   
+
+  //alert('Wins: ' + wins + ' Losses: ' + losses + ' Ties: ' + tie);
+
+
+
+
 
  
 
 
-//console.log(test.search('lose'))
+
 </script>
 
 
