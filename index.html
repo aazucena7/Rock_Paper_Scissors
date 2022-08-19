@@ -47,14 +47,14 @@ buttons.forEach((button) => {
       if (result.search('win') === -1  && result.search('tie') === -1) {
         losses++;
         document.getElementById("ComputerScore").innerHTML = losses;
-        if (losses === 2) {
+        if (losses === 5) {
           gameover();
         }
       }  
       else if (result.search('lose') === -1 && result.search('tie') === -1) {
         wins++;
         document.getElementById("UserScore").innerHTML = wins;
-        if (wins === 2) {
+        if (wins === 5) {
           gameover();
         }
       }  
@@ -67,7 +67,7 @@ buttons.forEach((button) => {
 });
 
 function gameover() {
-  if (wins === 2) {
+  if (wins === 5) {
     const scoresection = document.querySelector('.scoresection');
 
     const content = document.createElement('div');
