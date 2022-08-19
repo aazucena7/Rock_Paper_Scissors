@@ -31,7 +31,7 @@ button {
 button:hover {
     border: .5rem solid yellow;
 }
-.flex-left {
+.flexleft {
     display: flex;
     align-items: center;
     
@@ -43,7 +43,7 @@ button:hover {
    
 }
 
-.flex-right {
+.flexright {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,10 +53,12 @@ button:hover {
 }
 
 
-.score-section{
+.scoresection{
     display: flex;
     justify-content: center;
     margin-top: 10rem;
+    flex-direction: column;
+    align-items: center;
     
 }
 
@@ -66,8 +68,14 @@ button:hover {
     align-items: center;
     border: .5rem solid white;
     color: white;
-    height: 30rem;
+    height: 25rem;
     width: 20rem;
     font-size: 3rem;
     border-radius: 10px;
+}
+.content {
+    display: flex;
+    color: white;
+    font-size: 6rem;
+    padding-top: 4rem;
 }

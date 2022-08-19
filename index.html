@@ -16,12 +16,12 @@
     <button id="scissors">SCISSORS</button>
   </div>
 
-  <div class = "score-section">
+  <div class = "scoresection">
     <div id = "scoreboard">SCORE
-      <div class="flex-left">you
+      <div class="flexleft">you
         <div id = "UserScore">0</div>
       </div>
-      <div class="flex-right">computer
+      <div class="flexright">computer
         <div id = "ComputerScore">0</div>    
       </div>
     </div>
@@ -42,21 +42,20 @@ buttons.forEach((button) => {
   button.addEventListener('click', () => {
     UserChoice = button.id;
     
-    //playRound(UserChoice, getComputerChoice());
     let result = playRound(UserChoice, getComputerChoice());
     alert(result);    
       if (result.search('win') === -1  && result.search('tie') === -1) {
         losses++;
         document.getElementById("ComputerScore").innerHTML = losses;
         if (losses === 2) {
-          alert('YOU LOSE! BETTER LUCK NEXT TIME.');
+          gameover();
         }
       }  
       else if (result.search('lose') === -1 && result.search('tie') === -1) {
         wins++;
         document.getElementById("UserScore").innerHTML = wins;
         if (wins === 2) {
-          alert('YOU WIN! CONGRATS!');
+          gameover();
         }
       }  
       else if (result.search('tie') > 1) {
@@ -66,6 +65,29 @@ buttons.forEach((button) => {
       
   });
 });
+
+function gameover() {
+  if (wins === 2) {
+    const scoresection = document.querySelector('.scoresection');
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'YOU WIN!';
+
+    scoresection.appendChild(content);
+  }
+
+  else {
+    const scoresection = document.querySelector('.scoresection');
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'YOU LOSE!';
+
+    scoresection.appendChild(content);
+  }
+  
+}
 
 function getComputerChoice() {
 let choice = ['rock', 'paper', 'scissors'];
